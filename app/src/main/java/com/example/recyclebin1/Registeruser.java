@@ -64,7 +64,7 @@ public class Registeruser extends AppCompatActivity implements View.OnClickListe
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         String fullName = editTextFullName.getText().toString().trim();
-
+        String emailPattern = "[a-zA-Z0-9._-]+@nitc.ac.in+";
         if(fullName.isEmpty()){
             editTextFullName.setError("Full Name is required");
             editTextFullName.requestFocus();
@@ -75,8 +75,8 @@ public class Registeruser extends AppCompatActivity implements View.OnClickListe
             editTextEmail.requestFocus();
             return;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Plese provide valid email");
+        if(!email.matches(emailPattern)){
+            editTextEmail.setError("Plese provide valid NITC email id");
             editTextEmail.requestFocus();
             return;
         }

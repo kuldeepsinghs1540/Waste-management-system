@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView register ,forgotPassword;
     private EditText editTextEmail,editTextPassword;
-    private Button signIn;
+    private Button signIn,USERNITC,Staff,Admin;
 
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
@@ -31,78 +31,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        register=(TextView)findViewById(R.id.register);
-        register.setOnClickListener(this);
+        USERNITC = (Button)findViewById(R.id.USERNITC);
+        USERNITC.setOnClickListener(this);
 
-        signIn = (Button) findViewById(R.id.signIn);
-        signIn.setOnClickListener(this);
+        Staff = (Button) findViewById(R.id.Staff);
+        Staff.setOnClickListener(this);
 
-        editTextEmail = (EditText) findViewById(R.id.email);
-        editTextPassword = (EditText) findViewById(R.id.password);
+        Admin = (Button) findViewById(R.id.Admin);
+        Admin.setOnClickListener(this);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
-        mAuth = FirebaseAuth.getInstance();
-
-        forgotPassword = (TextView) findViewById(R.id.forgotPassword);
-        forgotPassword.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.register:
-                startActivity(new Intent(this,Registeruser.class));
+            case R.id.USERNITC:
+                startActivity(new Intent(this,UserPage.class));
                 break;
-            case R.id.signIn:
-                userLogin();
+            case R.id.Staff:
+                startActivity(new Intent(this,StaffPage.class));
                 break;
-            case R.id.forgotPassword:
-                startActivity(new Intent(this,ForgotPassword.class));
+            case R.id.Admin:
+                startActivity(new Intent(this,AdminVerify.class));
+                break;
         }
-    }
-
-    private void userLogin() {
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-
-        if(email.isEmpty()){
-            editTextEmail.setError("Email is required!");
-            editTextEmail.requestFocus();
-            return;
-        }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Plese enter a valid email!");
-            editTextEmail.requestFocus();
-            return;
-        }
-        if(password.isEmpty()){
-            editTextPassword.setError("Password is required!");
-            editTextPassword.requestFocus();
-            return;
-        }
-        if(password.length()<8){
-            editTextPassword.setError("min password length is 8 ");
-            editTextPassword.requestFocus();
-            return;
-        }
-
-        progressBar.setVisibility(View.VISIBLE);
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    if(user.isEmailVerified()) {
-                        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-
-                    }else{
-                        user.sendEmailVerification();
-                        Toast.makeText(MainActivity.this,"Check your email to verify !",Toast.LENGTH_LONG).show();
-                    }
-                    }else{
-                    Toast.makeText(MainActivity.this,"Failed to login! plese check your credentials",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
     }
 }

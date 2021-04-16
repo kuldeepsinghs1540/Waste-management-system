@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.recyclebin1">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -16,7 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Recyclebin1">
-
+        <activity android:name=".ComplainManage"></activity>
+        <activity android:name=".StaffManage" />
+        <activity android:name=".UserManage" />
+        <activity android:name=".dustbinManage" />
+        <activity android:name=".AdminVerify" />
+        <activity android:name=".AdminPage" />
+        <activity android:name=".StaffPage" />
+        <activity android:name=".UserPage" />
+        <activity android:name=".Complaint" />
+        <activity android:name=".ManageProfile" />
+        <activity android:name=".MyAlert" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,7 +40,7 @@
 
         <activity
             android:name=".SearchBin"
-            android:label="@string/title_activity_search_bin"></activity>
+            android:label="@string/title_activity_search_bin" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".Registeruser" />

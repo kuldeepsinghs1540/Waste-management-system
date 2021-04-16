@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Recyclebin1</string>
+    <string name="title_activity_search_bin">Map</string>
 </resources>

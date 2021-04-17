@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Recyclebin1">
-        <activity android:name=".ComplainManage"></activity>
+        <activity android:name=".StaffHomePage"></activity>
+        <activity android:name=".Deletestaff" />
+        <activity android:name=".AddStaff" />
+        <activity android:name=".ComplainManage" />
         <activity android:name=".StaffManage" />
         <activity android:name=".UserManage" />
         <activity android:name=".dustbinManage" />

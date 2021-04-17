@@ -6,4 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".ComplainManage">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="270dp"
+        android:layout_height="56dp"
+        android:text="Complain Manage"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="183dp"
+        android:layout_height="149dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874"
+        app:srcCompat="@drawable/complaint" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="155dp"
+        android:layout_height="145dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677"
+        app:srcCompat="@drawable/done" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

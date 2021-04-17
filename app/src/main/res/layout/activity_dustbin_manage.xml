@@ -6,4 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".dustbinManage">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="224dp"
+        android:layout_height="52dp"
+        android:text="Dustbin Manage"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156" />
+
+    <Button
+        android:id="@+id/AddBin"
+        android:layout_width="170dp"
+        android:layout_height="78dp"
+        android:text="Add Dustbin"
+        app:layout_constraintBottom_toTopOf="@+id/DeleteBin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.709" />
+
+    <Button
+        android:id="@+id/DeleteBin"
+        android:layout_width="170dp"
+        android:layout_height="78dp"
+        android:text="Delete Dustbin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="148dp"
+        android:layout_height="140dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toStartOf="@+id/AddBin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849"
+        app:srcCompat="@drawable/dustbin" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="160dp"
+        android:layout_height="122dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/DeleteBin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688"
+        app:srcCompat="@drawable/deletedustbin" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
